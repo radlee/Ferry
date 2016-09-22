@@ -1,11 +1,15 @@
-module.exports = function(numberOfCars, numberOfPeople){
+var Car = require("./Car");
+module.exports = function(x){
+  var load1 = []
   var people_count = 0;
   var car_count =0;
-  var board = function(numberOfCars, numberOfPeople) {
-    this.numberOfCars = numberOfCars;
-    this.numberOfPeople = numberOfPeople;
-    people_count += numberOfPeople;
-    car_count += numberOfCars;
+  if(x.numberOfPassengers > people_count){
+    people_count += x.numberOfPassengers;
+    car_count ++;
   }
-  return "";
+  var result = {
+    numberOfPeople : people_count,
+    numberOfCars : car_count
+  }
+  return result;
 }
